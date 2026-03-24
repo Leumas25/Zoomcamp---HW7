@@ -61,7 +61,7 @@ topic_name = 'green_trips'
 
 for _, row in df.iterrows():
     ride = ride_from_row(row)
-    producer.send(topic_name, ride)
+    producer.send(topic_name, value=ride)
     print(f"Sent {ride} ")
 
 producer.flush()
